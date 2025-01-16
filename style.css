@@ -1,0 +1,7 @@
+.shelf {
+    display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr) ;
+    min-width: 1vw;
+    min-height: 400px;
+}
