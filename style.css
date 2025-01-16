@@ -1,7 +1,17 @@
-.shelf {
-    display: flex;
+#shelf {
+    display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr) ;
     min-width: 1vw;
     min-height: 400px;
+    gap: 10px;
+}
+
+.book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    border-radius: 10px;
+    border: 5px solid brown;
 }
