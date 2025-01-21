@@ -1,14 +1,19 @@
 const shelf = document.getElementById('shelf');
 
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.info = function () {
+class Book {
+
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+
+    info() {
         return `${title} by ${author} is ${pages} long.`;
     };
-    this.isRead = isRead;
-}
+
+};
 
 const harry = new Book('Harry Potter', 'J.K Rowling', 560, false);
 const diary = new Book('Diary of a Wimpy Kid', 'Jeff Kinney', 240, false);
@@ -18,16 +23,15 @@ const myLibrary = [harry, diary];
 function addBookToLibrary(title, author, pages, isRead) {
     const book = new Book(title, author, pages, isRead);
     myLibrary.push(book);
-    displayBooks(); // Refresh the display after adding a book
+    displayBooks();
 }
 
 function removeBook(index) {
     myLibrary.splice(index, 1);
-    displayBooks(); // Refresh the display after removing a book
+    displayBooks();
 }
 
 function displayBooks() {
-    // Clear the shelf to avoid duplicates
     shelf.innerHTML = '';
 
     // Loop through the library and display each book
