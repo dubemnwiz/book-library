@@ -74,6 +74,11 @@ submit.addEventListener('click', (e) => {
     const author = document.getElementById('author').value;
     const pages = document.getElementById('pages').value;
     const read = document.getElementById('hasBeenRead').checked; // Use `.checked` for checkbox input
+    if (title.validity.valueMissing || author.validity.valueMissing || pages.validity.valueMissing) {
+        submit.setCustomValidity("Fill all book info!");
+    } else {
+        submit.setCustomValidity("");
+    }
     addBookToLibrary(title, author, pages, read);
     bookForm.close();
     bookForm.reset(); // Reset the form for the next entry
